@@ -1,54 +1,485 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mon Site Vitrine</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="#">MonLogo</a>
-  </div>
-</nav>
-
-<!-- Hero Section -->
-<header class="bg-primary text-white text-center py-5">
-  <div class="container">
-    <h1 class="display-4">Bienvenue sur Mon Site !</h1>
-    <p class="lead">Un site vitrine simple et efficace.</p>
-    <a href="#contact" class="btn btn-light mt-3">Me Contacter</a>
-  </div>
-</header>
-
-<!-- À propos Section -->
-<section class="py-5">
-  <div class="container text-center">
-    <h2>À propos</h2>
-    <p class="lead">Nous proposons les meilleurs services pour répondre à vos besoins.</p>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-5 bg-light">
-  <div class="container text-center">
-    <h2>Contactez-nous</h2>
-    <p>Envoyez-nous un email à <a href="mailto:contact@example.com">contact@example.com</a></p>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="py-3 bg-dark text-white text-center">
-  <div class="container">
-    <small>© 2025 Mon Site. Tous droits réservés.</small>
-  </div>
-</footer>
-
-<!-- Bootstrap JS (optionnel pour animations etc) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title id="pageTitle">Grayscale - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Styles supplémentaires pour la démo */
+            #control-panel {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                background: rgba(0,0,0,0.8);
+                color: white;
+                padding: 15px;
+                border-top-left-radius: 10px;
+                z-index: 9999;
+                max-width: 400px;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+            #control-panel h3 {
+                margin-top: 0;
+                color: white;
+                font-size: 16px;
+            }
+            #control-panel button {
+                margin-bottom: 10px;
+                padding: 5px 10px;
+            }
+            .control-group {
+                margin-bottom: 10px;
+                border-bottom: 1px solid #555;
+                padding-bottom: 10px;
+            }
+            .control-group:last-child {
+                border-bottom: none;
+            }
+            #toggle-panel {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                z-index: 10000;
+                display: none;
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top" id="navbarBrand">Start Bootstrap</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span id="menuButtonText">Menu</span>
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about" id="navItem1">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects" id="navItem2">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup" id="navItem3">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase" id="mastheadTitle">Grayscale</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5" id="mastheadSubtitle">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
+                        <a class="btn btn-primary" href="#about" id="mastheadButton">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4" id="aboutTitle">Built with Bootstrap 5</h2>
+                        <p class="text-white-50" id="aboutContent">
+                            Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
+                            <a href="https://startbootstrap.com/theme/grayscale/" id="aboutLink">the preview page.</a>
+                            <span id="aboutContentExtra">The theme is open source, and you can use it for any purpose, personal or commercial.</span>
+                        </p>
+                    </div>
+                </div>
+                <img class="img-fluid" src="assets/img/ipad.png" alt="..." id="aboutImage" />
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." id="projectFeatureImage" /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4 id="projectFeatureTitle">Shoreline</h4>
+                            <p class="text-black-50 mb-0" id="projectFeatureContent">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." id="project1Image" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white" id="project1Title">Misty</h4>
+                                    <p class="mb-0 text-white-50" id="project1Content">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." id="project2Image" /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white" id="project2Title">Mountains</h4>
+                                    <p class="mb-0 text-white-50" id="project2Content">Another example of a project with its respective description. These sections work well responsively as well!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5" id="signupTitle">Subscribe to receive updates!</h2>
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Email address input-->
+                            <div class="row input-group-newsletter">
+                                <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                                <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                            </div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required" id="emailRequiredFeedback">An email is required.</div>
+                            <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email" id="emailInvalidFeedback">Email is not valid.</div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3 mt-2 text-white">
+                                    <div class="fw-bolder" id="formSuccessTitle">Form submission successful!</div>
+                                    <span id="formSuccessText">To activate this form, sign up at</span>
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms" id="formSuccessLink">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2" id="formErrorText">Error sending message!</div></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0" id="contactAddressTitle">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50" id="contactAddress">4923 Market Street, Orlando FL</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0" id="contactEmailTitle">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!" id="contactEmailAddress">hello@yourdomain.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0" id="contactPhoneTitle">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50" id="contactPhone">+1 (555) 902-8832</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!" id="socialTwitter"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!" id="socialFacebook"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="#!" id="socialGithub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5" id="footerText">Copyright &copy; Your Website 2023</div></footer>
+        
+        <!-- Panneau de contrôle -->
+        <button id="toggle-panel" class="btn btn-primary">Montrer le panneau</button>
+        <div id="control-panel">
+            <h3>Panneau de configuration</h3>
+            <button id="hide-panel" class="btn btn-sm btn-warning">Cacher</button>
+            <div class="control-group">
+                <button id="preset-1" class="btn btn-sm btn-success">Thème Restaurant</button>
+                <button id="preset-2" class="btn btn-sm btn-info">Thème Tech</button>
+                <button id="preset-3" class="btn btn-sm btn-danger">Thème Mode</button>
+                <button id="preset-original" class="btn btn-sm btn-secondary">Original</button>
+            </div>
+            <div class="control-group">
+                <label>Meta Title:</label>
+                <input type="text" id="edit-pageTitle" class="form-control form-control-sm" />
+            </div>
+            <div class="control-group">
+                <label>Navigation Brand:</label>
+                <input type="text" id="edit-navbarBrand" class="form-control form-control-sm" />
+            </div>
+            <div class="control-group">
+                <label>Header Title:</label>
+                <input type="text" id="edit-mastheadTitle" class="form-control form-control-sm" />
+            </div>
+            <div class="control-group">
+                <label>Header Subtitle:</label>
+                <input type="text" id="edit-mastheadSubtitle" class="form-control form-control-sm" />
+            </div>
+            <div class="control-group">
+                <label>Get Started Button:</label>
+                <input type="text" id="edit-mastheadButton" class="form-control form-control-sm" />
+            </div>
+        </div>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        
+        <script>
+            // Configuration de tous les textes
+            const siteContent = {
+                // Valeurs par défaut (original)
+                original: {
+                    pageTitle: "Grayscale - Start Bootstrap Theme",
+                    navbarBrand: "Start Bootstrap",
+                    menuButtonText: "Menu",
+                    navItem1: "About",
+                    navItem2: "Projects",
+                    navItem3: "Contact",
+                    mastheadTitle: "Grayscale",
+                    mastheadSubtitle: "A free, responsive, one page Bootstrap theme created by Start Bootstrap.",
+                    mastheadButton: "Get Started",
+                    aboutTitle: "Built with Bootstrap 5",
+                    aboutContent: "Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on",
+                    aboutLink: "the preview page.",
+                    aboutContentExtra: "The theme is open source, and you can use it for any purpose, personal or commercial.",
+                    projectFeatureTitle: "Shoreline",
+                    projectFeatureContent: "Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!",
+                    project1Title: "Misty",
+                    project1Content: "An example of where you can put an image of a project, or anything else, along with a description.",
+                    project2Title: "Mountains",
+                    project2Content: "Another example of a project with its respective description. These sections work well responsively as well!",
+                    signupTitle: "Subscribe to receive updates!",
+                    emailRequiredFeedback: "An email is required.",
+                    emailInvalidFeedback: "Email is not valid.",
+                    formSuccessTitle: "Form submission successful!",
+                    formSuccessText: "To activate this form, sign up at",
+                    formSuccessLink: "https://startbootstrap.com/solution/contact-forms",
+                    formErrorText: "Error sending message!",
+                    contactAddressTitle: "Address",
+                    contactAddress: "4923 Market Street, Orlando FL",
+                    contactEmailTitle: "Email",
+                    contactEmailAddress: "hello@yourdomain.com",
+                    contactPhoneTitle: "Phone",
+                    contactPhone: "+1 (555) 902-8832",
+                    footerText: "Copyright &copy; Your Website 2023"
+                },
+                
+                // Thème Restaurant
+                restaurant: {
+                    pageTitle: "La Belle Assiette - Restaurant Gastronomique",
+                    navbarBrand: "La Belle Assiette",
+                    menuButtonText: "Menu",
+                    navItem1: "Notre Histoire",
+                    navItem2: "Notre Carte",
+                    navItem3: "Réservation",
+                    mastheadTitle: "La Belle Assiette",
+                    mastheadSubtitle: "Une expérience culinaire unique au cœur de la ville.",
+                    mastheadButton: "Découvrir",
+                    aboutTitle: "Notre cuisine",
+                    aboutContent: "La Belle Assiette vous propose une cuisine raffinée inspirée des saveurs du monde. Nos ingrédients sont soigneusement sélectionnés auprès de producteurs locaux pour",
+                    aboutLink: "une qualité exceptionnelle.",
+                    aboutContentExtra: "Notre chef étoilé vous invite à découvrir des plats authentiques revisités avec modernité.",
+                    projectFeatureTitle: "Menu Dégustation",
+                    projectFeatureContent: "Laissez-vous surprendre par notre menu dégustation en 5 services, renouvelé chaque saison pour mettre en valeur les produits de saison et l'inspiration du chef!",
+                    project1Title: "Vins d'Exception",
+                    project1Content: "Notre cave à vin renferme plus de 300 références soigneusement sélectionnées pour accompagner parfaitement votre repas.",
+                    project2Title: "Événements Privés",
+                    project2Content: "Célébrez vos moments importants dans notre salle privée pouvant accueillir jusqu'à 20 convives dans un cadre élégant et intimiste.",
+                    signupTitle: "Recevez notre newsletter gastronomique!",
+                    contactAddressTitle: "Adresse",
+                    contactAddress: "15 Avenue des Gourmets, Paris",
+                    contactEmailTitle: "Email",
+                    contactEmailAddress: "contact@labelleasssiette.fr",
+                    contactPhoneTitle: "Téléphone",
+                    contactPhone: "+33 (0)1 23 45 67 89",
+                    footerText: "Copyright &copy; La Belle Assiette 2025"
+                },
+                
+                // Thème Tech
+                tech: {
+                    pageTitle: "TechFuture - Solutions Innovantes",
+                    navbarBrand: "TechFuture",
+                    menuButtonText: "Menu",
+                    navItem1: "Services",
+                    navItem2: "Technologies",
+                    navItem3: "Contact",
+                    mastheadTitle: "TechFuture",
+                    mastheadSubtitle: "L'innovation technologique au service de votre entreprise.",
+                    mastheadButton: "Explorer",
+                    aboutTitle: "Technologies de pointe",
+                    aboutContent: "TechFuture développe des solutions avancées utilisant l'intelligence artificielle, le machine learning et le cloud computing. Nos experts sont certifiés dans",
+                    aboutLink: "les dernières technologies.",
+                    aboutContentExtra: "Nos solutions s'adaptent parfaitement aux besoins spécifiques de votre entreprise.",
+                    projectFeatureTitle: "Intelligence Artificielle",
+                    projectFeatureContent: "Nos algorithmes d'IA permettent d'automatiser vos processus métier, d'analyser vos données et d'améliorer votre prise de décision pour une efficacité maximale.",
+                    project1Title: "Cloud Computing",
+                    project1Content: "Migrez vos infrastructures vers le cloud pour plus de flexibilité, de sécurité et de performances, tout en optimisant vos coûts opérationnels.",
+                    project2Title: "Cybersécurité",
+                    project2Content: "Protégez vos données sensibles grâce à nos solutions de cybersécurité avancées qui détectent et neutralisent les menaces en temps réel.",
+                    signupTitle: "Restez informé des dernières innovations!",
+                    contactAddressTitle: "Siège Social",
+                    contactAddress: "88 Avenue de la Tech, Lyon",
+                    contactEmailTitle: "Email",
+                    contactEmailAddress: "info@techfuture.com",
+                    contactPhoneTitle: "Téléphone",
+                    contactPhone: "+33 (0)4 56 78 90 12",
+                    footerText: "Copyright &copy; TechFuture 2025"
+                },
+                
+                // Thème Mode
+                mode: {
+                    pageTitle: "Élégance - Boutique de Mode",
+                    navbarBrand: "Élégance",
+                    menuButtonText: "Menu",
+                    navItem1: "Collections",
+                    navItem2: "Lookbook",
+                    navItem3: "Boutique",
+                    mastheadTitle: "Élégance",
+                    mastheadSubtitle: "Des collections audacieuses pour un style qui vous ressemble.",
+                    mastheadButton: "Voir la collection",
+                    aboutTitle: "Mode Durable",
+                    aboutContent: "Élégance s'engage pour une mode responsable avec des tissus éco-responsables et une production locale. Découvrez notre nouvelle collection créée avec",
+                    aboutLink: "des matières recyclées.",
+                    aboutContentExtra: "Chaque pièce est conçue pour durer et s'adapter à toutes les occasions de votre vie.",
+                    projectFeatureTitle: "Collection Printemps",
+                    projectFeatureContent: "Notre collection printemps 2025 célèbre les couleurs vives et les coupes fluides pour un style à la fois confortable et sophistiqué, parfait pour la saison.",
+                    project1Title: "Accessoires",
+                    project1Content: "Complétez votre tenue avec notre sélection d'accessoires faits main par des artisans locaux, alliant qualité et originalité.",
+                    project2Title: "Sur-mesure",
+                    project2Content: "Notre service de confection sur-mesure vous permet de créer des vêtements uniques parfaitement adaptés à votre morphologie et à votre style.",
+                    signupTitle: "Soyez informé des nouvelles collections!",
+                    contactAddressTitle: "Boutique",
+                    contactAddress: "27 Rue de la Mode, Bordeaux",
+                    contactEmailTitle: "Email",
+                    contactEmailAddress: "boutique@elegance.fr",
+                    contactPhoneTitle: "Téléphone",
+                    contactPhone: "+33 (0)5 67 89 01 23",
+                    footerText: "Copyright &copy; Élégance 2025"
+                }
+            };
+            
+            // Fonction pour mettre à jour le contenu
+            function updateContent(theme) {
+                const content = siteContent[theme];
+                
+                // Mettre à jour tous les éléments
+                Object.keys(content).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        if (key === 'pageTitle') {
+                            document.title = content[key];
+                        } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.value = content[key];
+                        } else {
+                            element.textContent = content[key];
+                        }
+                        
+                        // Mettre à jour les champs d'édition
+                        const editField = document.getElementById('edit-' + key);
+                        if (editField) {
+                            editField.value = content[key];
+                        }
+                    }
+                });
+            }
+            
+            // Initialiser avec le contenu original
+            document.addEventListener('DOMContentLoaded', function() {
+                updateContent('original');
+                
+                // Ajouter les événements pour les boutons de préréglage
+                document.getElementById('preset-1').addEventListener('click', function() {
+                    updateContent('restaurant');
+                });
+                
+                document.getElementById('preset-2').addEventListener('click', function() {
+                    updateContent('tech');
+                });
+                
+                document.getElementById('preset-3').addEventListener('click', function() {
+                    updateContent('mode');
+                });
+                
+                document.getElementById('preset-original').addEventListener('click', function() {
+                    updateContent('original');
+                });
+                
+                // Ajouter les événements pour les champs d'édition
+                const editFields = document.querySelectorAll('[id^="edit-"]');
+                editFields.forEach(field => {
+                    field.addEventListener('input', function() {
+                        const targetId = field.id.replace('edit-', '');
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            if (targetId === 'pageTitle') {
+                                document.title = field.value;
+                            } else {
+                                targetElement.textContent = field.value;
+                            }
+                        }
+                    });
+                });
+                
+                // Gestion du panneau de contrôle
+                document.getElementById('hide-panel').addEventListener('click', function() {
+                    document.getElementById('control-panel').style.display = 'none';
+                    document.getElementById('toggle-panel').style.display = 'block';
+                });
+                
+                document.getElementById('toggle-panel').addEventListener('click', function() {
+                    document.getElementById('control-panel').style.display = 'block';
+                    document.getElementById('toggle-panel').style.display = 'none';
+                });
+            });
+        </script>
+    </body>
 </html>
