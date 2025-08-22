@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+    <form id="create-pack-form">
+        <div id="create-pack-form-items">  
+        <h2>Créer un nouveau pack</h2>
+        <label for="pack-name">Nom du pack :</label>
+        <input type="text" id="pack-name" name="pack-name" required>
+
+        <div id="questions-container">
+            <h3>Questions</h3>
+            <div class="question-pair">
+                <label for="question-1">Question 1 :</label>
+                <textarea class="textarea-question" "id="question-1" name="question"></textarea>
+                <br>
+                <label for="answer-1">Réponse 1 :</label>
+                <textarea class="textarea-answer" id="answer-1" name="answer"></textarea>
+                <br>
+                <label for=""additional-info-1">Complément de réponse :</label>
+                <textarea class="textarea-additional-info" id="additional-info-1" name="additional-info"></textarea>
+            </div>
+        </div>
+
+        <div id="buttons-container">
+                    <button type="button" id="add-question-btn" class="add-question-btn">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+
+        </button>
+
+
+        <button type="button" id="rm-question-btn" class="add-question-btn">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+
+        </button>
+
+        </div>
+        <br>
+        
+        <button type="submit" id="create-pack-btn">Créer le pack</button>
+
+        </div>
+    </form>
+    </main>
+
+    <script type="module" src="js/createNewPack.js"></script>
+</body>
+</html>

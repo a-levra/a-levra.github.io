@@ -1,0 +1,209 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.main-questions-and-answers {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+}
+
+#question-and-answer-section
+{
+    text-align: center;
+}
+
+#text {
+    padding: 100px auto;
+    font-size: 3em;
+    color: #333;
+}
+
+#text.correct {
+    color: green;
+}
+
+#text.incorrect {
+    color: red;
+}
+
+#text.additional-info {
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.menu-button {
+    /* Style du bouton */
+    background-color: #333; /* Couleur de fond sombre */
+    color: #fff; /* Couleur de l'icône blanche */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Rend le bouton rond */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* Retirer le soulignement */
+    transition: background-color 0.3s ease; /* Animation de transition */
+
+    /* Positionnement fixe en bas à droite */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* S'assure que le bouton est au-dessus des autres éléments */
+}
+
+/* Style de l'icône SVG à l'intérieur du bouton */
+.menu-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Effet au survol */
+.menu-button:hover {
+    background-color: #555; /* Assombrit légèrement au survol */
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #text {
+        font-size: 2em;
+    }
+
+    #text.additional-info {
+        font-size: 1.2em;
+    }
+}
+
+#create-pack-form {
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    width: 500px;
+    position: fixed;                            /* Centrage chelou mais ok */
+    top: 50%;                                   /* ....................... */
+    left: 50%;                                  /* ....................... */   
+    transform: translate(-50%, -50%);           /* ....................... */
+    padding-bottom: 50px;
+}
+
+/* pour mobile */
+@media (max-width: 600px) {
+    #create-pack-form {
+        width: 90%;
+    }
+}
+
+#create-pack-form::-webkit-scrollbar {
+    display: none; 
+}
+
+#create-pack-form-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #fff;
+    opacity: 0.35; 
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+    resize: none;
+    
+}
+input[type="text"]:focus,
+textarea:focus {
+    opacity: 0.6;
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea.textarea-question {
+    height: 50px;
+    padding: 10px;
+}
+
+textarea.textarea-answer {
+    height: 50px;
+    padding: 10px;
+}
+
+textarea.textarea-additional-info {
+    height: 80px;
+    padding: 10px;
+}
+/* 
+#cancel-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    opacity: 0.2;
+}
+
+#cancel-btn:hover {
+    opacity: 1;
+} */
+
+#create-pack-btn {
+    background-color:  #333;
+    color: #f0f0f0;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+
+}
+
+#create-pack-btn:hover {
+    background-color:  #f0f0f0;
+    color:  #333;
+    border: 1px solid  #333;
+}
+
+.add-question-btn {
+    border: none;
+    color: #fff; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.add-question-btn:hover {
+    background-color: #555; 
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 7px;
+}
+
+

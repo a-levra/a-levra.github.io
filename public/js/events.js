@@ -6,18 +6,22 @@ export function setupEventListeners(appState, onAnswer, onShowInfo) {
 
     // Événements de clavier
     window.addEventListener('keydown', (event) => {
-        event.preventDefault();
         if (appState.isOver) return;
 
         if (event.key === 'ArrowRight' && appState.isAnswerShown) {
+            event.preventDefault();
             onAnswer(true);
         } else if (event.key === 'ArrowLeft' && appState.isAnswerShown) {
+            event.preventDefault();
             onAnswer(false);
         } else if (event.key === 'ArrowDown' && appState.isAnswerShown) {
+            event.preventDefault();
             onShowInfo(false);
         } else if (event.key === 'ArrowUp' && appState.isAnswerShown) {
+            event.preventDefault();
             onShowInfo(true);
         } else if (event.key === ' ' && !appState.isAnswerShown) {
+            event.preventDefault();
             onAnswer();
         }
     });

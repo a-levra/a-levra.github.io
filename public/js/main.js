@@ -14,9 +14,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         randomIndex: 0,
         isOver: false,
     };
+    const choosedFlashcardsPack = localStorage.getItem('choosedFlashcardsPack');
+    let flashcardsPack = choosedFlashcardsPack ? choosedFlashcardsPack : 'flashcards.csv';
 
-    try {
-        appState.flashcards = await loadFlashcards('flashcards.csv');
+    try {   
+        appState.flashcards = await loadFlashcards(`flashcards/${flashcardsPack}`);
     } catch (error) {
         appState.textElement.textContent = "Erreur de chargement des questions.";
         return;

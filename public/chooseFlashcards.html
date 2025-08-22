@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flahcards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chooseFlashcards.css">
+</head>
+
+<body>
+    <main>
+        <section id="question-and-answer-section">
+            <h1 id="text">Choississez un pack de flashcards</h1>
+        </section>
+    </main>
+
+    <i>
+        <ul id="flashcard-pack-list">
+        </ul>
+    </i>
+    <a href="createNewPack.html" class="create-pack-svg" aria-label="Create new pack">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 7v10m5-5H7"></path>
+        </svg>
+    </a>
+
+        <div id="additional-info" style="display: none;">
+        <h2>Détails du pack</h2>
+        <p>
+            Ceci est un texte d'exemple pour le pack sélectionné. Vous pouvez remplacer ce contenu par les informations réelles que vous souhaitez afficher.
+        </p>
+    </div>
+
+    <script>
+
+        console.log('Fetching flashcard packs from flashcards/ ...');
+
+
+        fetch('/api/get-packs/', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de la récupération de la liste des flashcards, statut: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Liste des packs de flashcards:', data);
+
+                //old ***
+                const flashcardPackList = document.getElementById('flashcard-pack-list');
+                flashcardPackList.innerHTML = '';
+
+                // Populate the list with buttons for each pack
+                data.forEach(pack => {
+                    const listItem = document.createElement('li');
+                    const button = document.createElement('button');
+                    button.className = 'pack-button';
+                    button.setAttribute('data-pack', pack.fileName);
+                    button.textContent = pack.name;
+                    listItem.appendChild(button);
+                    flashcardPackList.appendChild(listItem);
+                    console.log(`Pack ajouté: ${pack.name}`);
+
+                });
+
+                console.log(`Total de packs ajoutés: ${data.length}`);
+
+
+
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                alert('Échec de la récupération des packs de flashcards, erreur: ' + error.message);
+            });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const flashcardPackList = document.getElementById('flashcard-pack-list');
+
+            flashcardPackList.addEventListener('click', (event) => {
+                if (event.target.classList.contains('pack-button')) {
+                    const selectedPack = event.target.getAttribute('data-pack');
+                    console.log('Pack sélectionné:', selectedPack);
+                    if (selectedPack) {
+                        localStorage.setItem('choosedFlashcardsPack', selectedPack);
+                        console.log(selectedPack);
+                        window.location.href = 'index.html';
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
